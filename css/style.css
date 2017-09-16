@@ -5,9 +5,9 @@
 	font-size: 16px;
 }
 body {
-	max-width: 1350px;
+	max-width: 1366px;
 	margin: 0px auto;
-	display: block;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
@@ -15,14 +15,17 @@ body {
 header {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
-	height: 767px;
-	border-radius: 2px;
-	background: url(../img/BG_dog_1.jpg) no-repeat center top / cover;
+	max-width: 1366px;
+	
 }
 .header_top {
+	position: absolute;
+	width: 100%;
+    left: 0;
+    top: 0;
 	display: flex;
 	padding-top: 50px;
+	z-index: 4444;
 	
 }
 .header__contacts {
@@ -66,12 +69,14 @@ header {
 	font-size: 14px;
 }
 .navigation_top {
-	flex-grow: 1;
+	position: absolute;
+	width: 100%;
+    left: 0;
+    top: 145px;
 	display: inline-flex;
 	flex-direction:row;
 	justify-content: center;
 	align-items: flex-start;
-	padding-top: 25px;
 
 }
 .navigation_top a {
@@ -84,12 +89,26 @@ header {
 .navigation_top a:last-child{
 	margin-right: -71px;
 }
+.service__menu {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	position: relative;
+	height: 36px;
+}
+.service__menu_items {
+	flex-grow: 1;
+	display: none;
+}
 .fa {
-	font-size: 20px;
 	color: black;
 	align-self: flex-end;
 	padding: 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
+
 			/*Тело*/
 .container_content_wrapper {
 	display: flex;
@@ -166,7 +185,7 @@ header {
 	/*min-height: 1050px;*/
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: space-around;
 	
 
 }
@@ -219,8 +238,8 @@ header {
 footer {
 	margin-top: 100px;
 	height: 150px;
+	width: 1366px;
 	background-color: black;
-	border-radius: 3px;
 	text-align: center;
 }
 .logo_footer {
@@ -269,6 +288,7 @@ footer {
 	left: 0;
 	bottom: 0;
 	background: rgba(0, 0, 0, 0.8);
+	overflow: hidden;
 }
 .active_pop {
 	display: block;
@@ -303,23 +323,149 @@ footer {
 	content: "X";
 }
 
+			/*Add card form*/
+
+.addCard__form{
+	display: none;
+	height: 500px;
+	width: 500px;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left: -250px; 
+	background-color: white;
+	border: 1px solid black;
+	position: fixed;
+	z-index: 1000;
+}
+.addCard__form p {
+	display: inline-block;
+}
 
 			/*Slider*/
 
 
-.slider_wrapper {
+#block-for-slider {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 0px;
+}
 
-	
-	border:1px solid black;
-	height: 300px;
-	width: 500px;
-	margin:0 auto;
-	margin-top: 100px;
+#viewport {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+
+#slidewrapper {
+    position: relative;
+    width: calc(100% * 3);
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    -webkit-transition-timing-function: cubic-bezier(.67,.01,.23,1);
+    -o-transition-timing-function: cubic-bezier(.67,.01,.23,1);
+    transition-timing-function: cubic-bezier(.67,.01,.23,1);
+}
+
+#slidewrapper, #slidewrapper ul, #slidewrapper li {
+    margin: 0;
+    padding: 0;
+}
+
+.slide {
+    width: calc(100%/3);
+    list-style: none;
+    display: inline;
+    float: left;
+}
+
+.slide-img {
+    width: 100%;
+}
+
+#prev-btn, #next-btn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: calc(50% - 50px);
+    font-size: 30px;
+    color: #fff;
+}
+
+#prev-btn:hover, #next-btn:hover {
+    cursor: pointer;
+}
+
+#prev-btn {
+    left: 20px;
+}
+#prev-btn:before {
+	content: "<"
 
 }
 
-	
+#next-btn:before {
+	content: ">"
+
+}
+
+#next-btn {
+    right: 20px;
+}
+
+#nav-btns {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.slide-nav-btn {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 6px;
+}
+
+.slide-nav-btn:hover {
+    cursor: pointer;
+}
+
+/*Форма добавления слайда*/
+
+.adding__slide_form {
+	display: none;
+	height: 50px;
+	width: 300px;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -150px; 
+	background-color: white;
+	border: 1px solid black;
+	position: fixed;
+	z-index: 1000;
+	padding-left: 15px;
+}
+
+
+
+
 		/*Медиазапросы*/
+
 @media screen and (max-width: 460px)  {
 
 }

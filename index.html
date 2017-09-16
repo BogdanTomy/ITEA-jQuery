@@ -12,13 +12,29 @@
 	<!-- jQuery local -->
 	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
 	<!-- main js document -->
-	<script src="js/main.js" type="text/javascript"></script>
+	
 
 </head>
 <body>
 
 			<!-- =============Шапка (Header)  =============== -->
-	<header>
+<header> 
+	<div id="block-for-slider">
+        <div id="viewport">
+            <ul id="slidewrapper">
+                <li class="slide"><img src="img/SL/Slide_1.png" alt="1" class="slide-img"></li>
+                <li class="slide"><img src="img/SL/Slide_2.png" alt="2" class="slide-img"></li>
+                <li class="slide"><img src="img/SL/Slide_3.png" alt="3" class="slide-img"></li>
+            </ul>
+
+            <div id="prev-next-btns">
+                <div id="prev-btn"></div>
+                <div id="next-btn"></div>
+            </div>
+
+           
+
+
 		<div class="header_top">
 			<div class="header__contacts">
 				<p class="phone_1">
@@ -39,21 +55,49 @@
 				<a href="#">Sign up</a>
 				</p>
 			</div>
-		</div>
-		<nav class="navigation_top">
+
+			<nav class="navigation_top">
 			<a href="#">About us</a>
 			<a href="#content_title">Shop</a>
 			<a href="#">Contact us</a>
 			<a href="#">Partners</a>
 			<a href="#">Blog</a>
 		</nav>
+		</div>
+		
+
+	
+		 <ul id="nav-btns">
+                <li class="slide-nav-btn"></li>
+                <li class="slide-nav-btn"></li>
+                <li class="slide-nav-btn"></li>
+            </ul>
+
+
+        </div>
+    </div>
+	
+		
 
 	</header>
 
 		<!-- ===============Тело (Main Content)=============== -->
 
 	<div class="container_content_wrapper">
-		<i class="fa fa-cog" aria-hidden="true"></i>
+		<div class="service__menu">
+			<div class="service__menu_items">
+				<button id="add_card_btn">Add card</button>
+				<button id="add_slide_btn">Add slide</button>
+				<button id="del_btn_activation">Show/Hide DEL button</button>
+				<select id="anim_type_selection">
+  					<option>Animation type 1</option>
+  					<option>Animation type 2</option>
+  					<option>Animation type 3</option>
+				</select>
+			</div>
+			<i class="fa fa-cog" id="showServ" aria-hidden="true"></i>
+		</div>
+
 
 		<div class="content_title" id="content_title">
 			<h3>
@@ -128,17 +172,55 @@
 		</div>
 	</template>
 
-	<!-- Слайдер -->
+	<!-- ========== Форма для добавления каторчки товара (Add Card Form) =========== -->
+	
+	<div class="addCard__form">
+		<form onsubmit=" return false ">
+			<label for="form_manufacturer">Choose manufacturer</label>
+			<select name="manufacturer" id="form_manufacturer">
+				<option value="acana">Acana</option>
+				<option value="orijen">Orijen</option>
+				<option value="ovenbaced">Oven Bacet</option>
+				<option value="saba">Saba</option>
+			</select>
+			<label for="form_category">Choose category</label>
+			<select name="category" id="form_category">
+				<option value="puppies">Puppies</option>
+				<option value="small">Adult Small Breeds</option>
+				<option value="medium">Adult Medium Breeds</option>
+				<option value="large">Adult Large Breeds</option>
+				<option value="allbreed">All Breeds</option>
+				<option value="sport">Sport</option>
+				<option value="light">Light</option>
+			</select>
+			<label for="form_title">Enter title</label>
+			<input type="text" id="form_title">
+			<label for="form_prise">Enter prise (UAH)</label>
+			<input type="text" id="form_prise">
+			<label for="form_value">Enter value (KG)</label>
+			<input type="text" id="form_value">
+			<label for="form_description">Enter short description</label>
+			<textarea type="text" id="form_description"></textarea>
+			<label for="form_descriptionFull">Enter full description</label>
+			<textarea type="text" id="form_descriptionFull"></textarea>
+			<label for="form_img">Add img</label>
+			<input type="file" id="form_img">
 
-	<div class="slider_wrapper">
-		
-		<div class="slider_body">
-
-			<img src="#" alt=""><img src="#" alt=""><img src="#" alt=""><img src="#" alt=""><img src="#" alt="">
-			
-		</div>
-
+			<button id="form_submit_btn">GO</button>
+		</form>
 	</div>
+
+
+	
+	<div class="adding__slide_form">
+		<label for="form_prise">Enter picture's name</label>
+		<input type="text" id="slide_picture_name">
+		<button id="adding__slide_submit">Add slide</button>
+	</div>
+
+
+
+	<script src="js/main.js" type="text/javascript"></script>
 
 </body>
 </html>

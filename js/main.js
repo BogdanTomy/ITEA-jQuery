@@ -1,5 +1,4 @@
-window.onload = function(){
-	
+
 	var prodCard = $('#content_body');
 	var tempCard = $('#temp_card');
 
@@ -8,7 +7,7 @@ window.onload = function(){
 
 	var sourse = [
 	{ /*-----------------ACANA--------------------- */
-		id: 1,
+		id: 0,
 		manufacturer: "acana" ,
 		category: "puppies" ,
 		title: "Acana puppy small breed" ,
@@ -19,7 +18,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный и сбалансированный беззерновой холистик корм для щенков малых пород"
 	},
 	{
-		id: 2,
+		id: 1,
 		manufacturer: "acana" ,
 		category: "sport" ,
 		title: "ACANA SPORT & AGILITY" ,
@@ -30,7 +29,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный и сбалансированный холистик корм для собак с активным образом жизни."
 	},
 	{
-		id: 3,
+		id: 2,
 		manufacturer: "acana" ,
 		category: "allbreed" ,
 		title: "ACANA LAMB & APPLE" ,
@@ -41,7 +40,7 @@ window.onload = function(){
 		descriptionFull: "Корм для собак всех возрастов и всех пород на основе мяса ягненка и яблока. Особенно подходит  для собак с чувствительным пищеварением и склонным к аллергии."
 	},
 	{
-		id: 4,
+		id: 3,
 		manufacturer: "acana" ,
 		category: "puppies" ,
 		title: "ACANA PUPPY & JUNIOR" ,
@@ -52,7 +51,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный и сбалансированный корм для щенков и юниоров средних пород."
 	},
 	{
-		id: 5,
+		id: 4,
 		manufacturer: "acana" ,
 		category: "puppies" ,
 		title: "ACANA PUPPY LARGE BREED" ,
@@ -63,7 +62,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный и сбалансированный корм для щенков крупных пород."
 	},
 	{
-		id: 6,
+		id: 5,
 		manufacturer: "acana" ,
 		category: "sport" ,
 		title: "ACANA YORKSHIRE PORK" ,
@@ -74,7 +73,7 @@ window.onload = function(){
 		descriptionFull: "Полнорационный и сбалансированный корм для собак всех пород и возрастов с чувствительной пищеварительной системой."
 	},
 	{
-		id: 7,
+		id: 6,
 		manufacturer: "acana" ,
 		category: "large" ,
 		title: "ACANA ADULT LARGE BREED" ,
@@ -85,7 +84,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный и сбалансированный корм для взрослых собак крупных пород."
 	},
 	{
-		id: 8,
+		id: 7,
 		manufacturer: "acana" ,
 		category: "medium" ,
 		title: "ACANA ADULT DOG" ,
@@ -96,7 +95,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный,  сбалансированый корм для взрослых собак всех пород. Натуральный и вкусный, он обеспечит Вашей собаке силу и здоровье."
 	},
 	{
-		id: 9,
+		id: 8,
 		manufacturer: "acana" ,
 		category: "small" ,
 		title: "ACANA ADULT SMALL BREED" ,
@@ -107,7 +106,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный и сбалансированный корм, богатый качественными протеинами и жирами, с низким содержанием углеводов, для контроля над весом."
 	},
 	{
-		id: 10,
+		id: 9,
 		manufacturer: "acana" ,
 		category: "allbreed" ,
 		title: "ACANA COBB CHICKEN & GREENS" ,
@@ -118,7 +117,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный и сбалансированный корм для взрослых собак на основе мяса цыпленка."
 	},
 	{
-		id: 11,
+		id: 10,
 		manufacturer: "acana" ,
 		category: "light" ,
 		title: "ACANA LIGHT & FIT" ,
@@ -129,7 +128,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный и сбалансированный корм для взрослых собак всех пород с избыточным весом."
 	},
 	{
-		id: 12,
+		id: 11,
 		manufacturer: "acana" ,
 		category: "allbreed" ,
 		title: "ACANA FREE-RUN DUCK" ,
@@ -143,7 +142,7 @@ window.onload = function(){
 	/*-----------------ORIJEN--------------------- */
 
 	{
-		id: 13,
+		id: 12,
 		manufacturer: "orijen" ,
 		category: "puppies" ,
 		title: "Orijen puppy" ,
@@ -154,7 +153,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный, сбалансированый беззерновой холистик корм для щенков собак всех пород."
 	},
 	{
-		id: 14,
+		id: 13,
 		manufacturer: "orijen" ,
 		category: "puppies" ,
 		title: "Orijen PUPPY LARGE" ,
@@ -165,7 +164,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный, сбалансированый беззерновой холистик корм для щенков собак всех пород."
 	},
 	{
-		id: 15,
+		id: 14,
 		manufacturer: "orijen" ,
 		category: "large" ,
 		title: "Orijen adult dog" ,
@@ -176,7 +175,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный,  сбалансированый корм для взрослых собак всех пород, максимально приближенный к природному рациону питания Вашей собаки."
 	},
 	{
-		id: 16,
+		id: 15,
 		manufacturer: "orijen" ,
 		category: "light" ,
 		title: "Orijen six fishes" ,
@@ -187,7 +186,7 @@ window.onload = function(){
 		descriptionFull: "Полноценный,  сбалансированый корм для взрослых собак всех пород, на основе шести видов морских рыб."
 	},
 	{
-		id: 17,
+		id: 16,
 		manufacturer: "orijen" ,
 		category: "allbreed" ,
 		title: "Orijen original" ,
@@ -201,7 +200,7 @@ window.onload = function(){
 	/*-----------------OVEN BACED--------------------- */
 
 	{
-		id: 18,
+		id: 17,
 		manufacturer: "ovenbaced" ,
 		category: "allbreed" ,
 		title: "OVEN BAKED Chiken" ,
@@ -212,7 +211,7 @@ window.onload = function(){
 		descriptionFull: "Беззерновая формула корма FREE Oven-Baked НЕ СОДЕРЖИТ зерновых продуктов и состоит из 57% животного протеина."
 	},
 	{
-		id: 19,
+		id: 18,
 		manufacturer: "ovenbaced" ,
 		category: "light" ,
 		title: "OVEN BAKED Fish" ,
@@ -223,7 +222,7 @@ window.onload = function(){
 		descriptionFull: "Беззерновая формула корма FREE Oven-Baked НЕ СОДЕРЖИТ зерновых продуктов и состоит из 57% животного протеина."
 	},
 	{
-		id: 20,
+		id: 19,
 		manufacturer: "ovenbaced" ,
 		category: "small" ,
 		title: "OVEN BAKED Small breed" ,
@@ -234,7 +233,7 @@ window.onload = function(){
 		descriptionFull: "Беззерновая формула корма FREE Oven-Baked НЕ СОДЕРЖИТ зерновых продуктов и состоит из 57% животного протеина."
 	},
 	{
-		id: 21,
+		id: 20,
 		manufacturer: "ovenbaced" ,
 		category: "small" ,
 		title: "OVEN BAKED Small breed" ,
@@ -245,7 +244,7 @@ window.onload = function(){
 		descriptionFull: "Беззерновая формула корма FREE Oven-Baked НЕ СОДЕРЖИТ зерновых продуктов и состоит из 57% животного протеина."
 	},
 	{
-		id: 22,
+		id: 21,
 		manufacturer: "ovenbaced" ,
 		category: "medium" ,
 		title: "OVEN BAKED adult" ,
@@ -259,7 +258,7 @@ window.onload = function(){
 	/*-----------------SABA--------------------- */
 
 	{
-		id: 23,
+		id: 22,
 		manufacturer: "saba" ,
 		category: "small" ,
 		title: "Saba Beef and rise" ,
@@ -270,7 +269,7 @@ window.onload = function(){
 		descriptionFull: "..."
 	},
 	{
-		id: 24,
+		id: 23,
 		manufacturer: "saba" ,
 		category: "allbreed" ,
 		title: "Saba grain free duck" ,
@@ -281,7 +280,7 @@ window.onload = function(){
 		descriptionFull: "..."
 	},
 	{
-		id: 25,
+		id: 24,
 		manufacturer: "saba" ,
 		category: "large" ,
 		title: "Saba Beef and rise" ,
@@ -292,7 +291,7 @@ window.onload = function(){
 		descriptionFull: "..."
 	},
 	{
-		id: 26,
+		id: 25,
 		manufacturer: "saba" ,
 		category: "medium" ,
 		title: "Saba turkey with rice" ,
@@ -303,7 +302,7 @@ window.onload = function(){
 		descriptionFull: "..."
 	},
 	{
-		id: 27,
+		id: 26,
 		manufacturer: "saba" ,
 		category: "puppies" ,
 		title: "Saba puppy turkey with rice" ,
@@ -314,7 +313,7 @@ window.onload = function(){
 		descriptionFull: "..."
 	},
 	{
-		id: 28,
+		id: 27,
 		manufacturer: "saba" ,
 		category: "sport" ,
 		title: "Saba grain free pork" ,
@@ -331,7 +330,7 @@ window.onload = function(){
 
 	function filler (root, temp, s){
 
-		s.forEach( function(item){
+		s.forEach( function fill (item){
 
 			var body = $(tempCard.html());
 
@@ -345,7 +344,7 @@ window.onload = function(){
 
 			body.find('.prod__card_description_full').text(item.descriptionFull);
 
-			body.addClass('all_manuf all_categ active_manuf ' + item.manufacturer + '_manuf ' + item.category + '_categ');
+			body.addClass('id_' + item.id + ' all_manuf all_categ active_manuf ' + item.manufacturer + '_manuf ' + item.category + '_categ');
 
 			root.append(body);
 		});
@@ -354,6 +353,7 @@ window.onload = function(){
 	filler(prodCard, tempCard, sourse);
 
 /*-----------------Фильтр по производителю (Manufacturer Filter)--------------------- */
+
 
 	$(function () {
 		var newSelect = '';
@@ -406,11 +406,18 @@ window.onload = function(){
 
 	});
 
+	/*-----------------Показать сервисное меню (Show servise menu)--------------------- */
+	$('.fa').click(function(){
+		$('.service__menu_items').slideToggle('slow');
+	});
+
 	/*-----------------POPUP карточка товара --------------------- */
 
 	/*------v.1.0---- */
 
-	$('.content_body div').click( function () {
+	$('.content_body').on( 'click.div', function () {
+
+		console.log(this);
 
 		var choise = ($(this).clone());
 
@@ -424,11 +431,12 @@ window.onload = function(){
 		document.body.style.overflow = 'hidden';
 
 		popupBg.click(function() {
-			$('.popup_bg').css('display', 'none');
+			$('.popup_bg').animate({opacity:'hide'}, 500);
 			testThis.removeClass('active_pop');
 			document.body.style.overflow = '';
-		})
-	});
+		});
+		});
+	
 
 	/*----------------- Удаление карточки (Dell card)--------------------- */
 
@@ -449,11 +457,142 @@ window.onload = function(){
 
 	/*----------------- Добавление товара (Add goods)--------------------- */
 	
+	$('#add_card_btn').click( function() {
+		$('.popup_bg').fadeTo(500, 1);
+		$('.addCard__form').fadeIn(500);
+		document.body.style.overflow = 'hidden';
+		$('#form_submit_btn').click( function (e) {
 
-	// 
+			e.stopPropagation();
+
+			var temp = {};
+
+			temp.id = sourse.length + 1;
+			temp.manufacturer = $('#form_manufacturer').val();
+			temp.category = $('#form_category').val();
+			temp.title = $('#form_title').val();
+			temp.prise = $('#form_prise').val() + ' UAH';
+			temp.value = $('#form_value').val() + ' KG';
+			temp.description = $('#form_description').val();
+			temp.description = $('#form_descriptionFull').val();
+			temp.descriptionFull = $('#form_descriptionFull').val();
+
+			sourse.push(temp);
+
+			$('.content_body div').remove();
+
+			filler(prodCard, tempCard, sourse);
+
+			$('.addCard__form').animate({opacity:'hide'}, 500);
+
+			$('.popup_bg').animate({opacity:'hide'}, 500);
+
+			document.body.style.overflow = '';
+
+		});
+	});
 
 
-	/*----------------- Функция для скрытия елементов (Elem. Hideout function)--------------------- */
+
+	/*--------- Функция для скрытия елементов (Elem. Hideout function)----------- */
 
 
-};
+	/*----------------- Слайдер (Slider)--------------------- */
+
+
+
+var slideNow = 1;
+var slideCount = $('#slidewrapper').children().length;
+var slideInterval = 3000;
+var navBtnId = 0;
+var translateWidth = 0;
+
+$(document).ready(function() {
+    var switchInterval = setInterval(nextSlide, slideInterval);
+
+    $('#viewport').hover(function() {
+        clearInterval(switchInterval);
+    }, function() {
+        switchInterval = setInterval(nextSlide, slideInterval);
+    });
+
+    $('#next-btn').click(function() {
+        nextSlide();
+    });
+
+    $('#prev-btn').click(function() {
+        prevSlide();
+    });
+
+    $('.slide-nav-btn').click(function() {
+        navBtnId = $(this).index();
+
+        if (navBtnId + 1 != slideNow) {
+            translateWidth = -$('#viewport').width() * (navBtnId);
+            $('#slidewrapper').css({
+                'transform': 'translate(' + translateWidth + 'px, 0)',
+                '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+                '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+            });
+            slideNow = navBtnId + 1;
+        }
+    });
+});
+
+
+function nextSlide() {
+    if (slideNow == slideCount || slideNow <= 0 || slideNow > slideCount) {
+        $('#slidewrapper').css('transform', 'translate(0, 0)');
+        slideNow = 1;
+    } else {
+        translateWidth = -$('#viewport').width() * (slideNow);
+        $('#slidewrapper').css({
+            'transform': 'translate(' + translateWidth + 'px, 0)',
+            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+        });
+        slideNow++;
+    }
+}
+
+function prevSlide() {
+    if (slideNow == 1 || slideNow <= 0 || slideNow > slideCount) {
+        translateWidth = -$('#viewport').width() * (slideCount - 1);
+        $('#slidewrapper').css({
+            'transform': 'translate(' + translateWidth + 'px, 0)',
+            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+        });
+        slideNow = slideCount;
+    } else {
+        translateWidth = -$('#viewport').width() * (slideNow - 2);
+        $('#slidewrapper').css({
+            'transform': 'translate(' + translateWidth + 'px, 0)',
+            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+        });
+        slideNow--;
+    }
+}
+
+/*----------------- Добавление слайда (Add slide)--------------------- */
+
+$('#add_slide_btn').on('click', function () {
+
+document.body.style.overflow = 'hidden';
+
+$('.popup_bg').fadeTo(500, 1);
+
+$('.adding__slide_form').fadeIn(500);
+
+$('#adding__slide_submit').on('click', function () {
+	alert('Submit');
+})
+
+});
+
+
+
+function addSlide (picName) {
+
+}
