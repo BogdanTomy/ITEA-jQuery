@@ -5,17 +5,21 @@
 	font-size: 16px;
 }
 body {
+
+	margin: 0px auto;
+	
+}
+.total_wrap {
 	max-width: 1366px;
 	margin: 0px auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 }
 			/*Шапка*/
 header {
 	display: flex;
 	flex-direction: column;
-	max-width: 1366px;
+	/*max-width: 1366px;*/
 	
 }
 .header_top {
@@ -109,6 +113,11 @@ header {
 	right: 0;
 }
 
+			/*Сервисное меню*/
+#add_card_btn {
+	margin: 0px 10px;
+}
+
 			/*Тело*/
 .container_content_wrapper {
 	display: flex;
@@ -116,7 +125,7 @@ header {
 	align-items: center;
 }
 .content_title {
-	height: 120px;
+	height: 100px;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -238,13 +247,26 @@ header {
 footer {
 	margin-top: 100px;
 	height: 150px;
-	width: 1366px;
+	
 	background-color: black;
 	text-align: center;
+	display: flex;
 }
 .logo_footer {
+	display: block;
+	margin: 0px auto;
 	margin-top: 70px;
 	height: 50px;
+}
+
+			/*Поиск*/
+#search {
+	align-self: flex-end;
+}
+#autocomplete_search {
+	outline: none;
+	border:none;
+	border-bottom: 1px solid black;
 }
 
 			/*Динамика*/
@@ -298,29 +320,38 @@ footer {
 	left: 50%;
 }
 
-			/*Кнопка удаления*/
-.del__button_card {
+			/*Кнопка закрытия*/
+.close__button_card {
+/*	display: none;*/
 	position: absolute;
 	width: 18px;
 	height: 16px;
-	top: -5px;
-	right: -5px;
+	top: 0px;
+	right: 0px;
 	border: 2px solid white;
 	border-radius: 2px;
 	background-color: black;
-	color: white;
+	color: #fff;
 	text-decoration: none;
+	text-align: center; 
 	font-size: 14px;
 	padding: 0px;
 	margin: 1px 1px 0 0;
 	z-index: 2;
 }
-.del__button_card:hover {
+.close__button_card:hover {
 	transition: 0.3s;
 	font-weight: bold;
 }
-.del__button_card:before {
-	content: "X";
+
+
+			/*Кнопка удаления товара*/
+
+.del__button_card {
+	display: none;
+	border: 1px solid red;
+	color: red;
+	text-decoration: none;
 }
 
 			/*Add card form*/
@@ -387,7 +418,7 @@ footer {
 }
 
 .slide-img {
-    width: 100%;
+    width: 1366px;
 }
 
 #prev-btn, #next-btn {
@@ -397,10 +428,12 @@ footer {
     top: calc(50% - 50px);
     font-size: 30px;
     color: #fff;
+    opacity: 0.4;
 }
 
 #prev-btn:hover, #next-btn:hover {
     cursor: pointer;
+    opacity: 1;
 }
 
 #prev-btn {
@@ -438,6 +471,11 @@ footer {
     background-color: #fff;
     border-radius: 50%;
     margin: 6px;
+    opacity: 0.5;
+}
+
+.slide-nav-current {
+	opacity: 1;
 }
 
 .slide-nav-btn:hover {
@@ -448,8 +486,8 @@ footer {
 
 .adding__slide_form {
 	display: none;
-	height: 50px;
-	width: 300px;
+	height: 80px;
+	width: 400px;
 	top: 50%;
 	left: 50%;
 	margin-top: -25px;
@@ -461,6 +499,64 @@ footer {
 	padding-left: 15px;
 }
 
+
+
+		/*Корзина*/
+.cart_wrapper {
+	position: fixed;
+	right: 20px;
+	bottom: 80px;
+	z-index: 100;
+	cursor: pointer;
+}
+.cart_modal {
+	width: 300px;
+	min-height: 200px;
+	position: fixed;
+	bottom: 70px;
+	right: 10px;
+	border: 1px solid black;
+	border-radius: 2px;
+	background-color: #fff;
+	list-style-position: inside;
+	display: none;
+}
+.cart_modal_title {
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Roboto', 'Arial', sans-serif;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.cart_modal ol {
+	
+}
+.cart_modal ol li {
+	margin-left: 10px; 
+}
+.cart_modal ol li:last-child {
+	margin-bottom: 50px;
+
+}
+.cart_modal_prise {
+	position: absolute;
+	bottom: 10px;
+	left: 15px;
+}
+.cart_active_class_rdagg {
+	box-shadow: 2px 3px 7px black;
+}
+.cart_active_class_hover {
+	background-color: #ACFFE3;
+}
+#remove_From_Chart {
+	display: none;
+}
+.cart_title_empty {
+	text-align: center;
+	margin-top: 20px;
+
+}
 
 
 

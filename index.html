@@ -11,11 +11,14 @@
 <!-- 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
 	<!-- jQuery local -->
 	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
-	<!-- main js document -->
+	<!-- jQuery-UI local -->
+	<script src="js/jquery-ui.js" type="text/javascript"></script>
 	
 
 </head>
 <body>
+
+<div class="total_wrap">
 
 			<!-- =============Шапка (Header)  =============== -->
 <header> 
@@ -68,7 +71,7 @@
 
 	
 		 <ul id="nav-btns">
-                <li class="slide-nav-btn"></li>
+                <li class="slide-nav-btn slide-nav-current"></li>
                 <li class="slide-nav-btn"></li>
                 <li class="slide-nav-btn"></li>
             </ul>
@@ -94,6 +97,10 @@
   					<option>Animation type 2</option>
   					<option>Animation type 3</option>
 				</select>
+				<select id="anim_speed_selection">
+  					<option>Slow</option>
+  					<option>Fast</option>
+				</select>
 			</div>
 			<i class="fa fa-cog" id="showServ" aria-hidden="true"></i>
 		</div>
@@ -103,6 +110,10 @@
 			<h3>
 				Featured products
 			</h3>
+		</div>
+		<!-- ===============Поиск (Search)=============== -->
+		<div id="search" class="ui-widget">
+				<input id="autocomplete_search" placeholder="Search..." >
 		</div>
 		<div class="content_filter_main">
 			<ul>
@@ -152,14 +163,15 @@
 
 	<template id="temp_card">
 		<div class="prod__card" id="prod_card">
-		<!-- 	<a class="close" title="Закрыть" href="#close"></a> -->
-			<a class="del__button_card" href="#"></a>
+	<!-- 		<a class="close" title="Закрыть" href="#close"></a> -->
+			
 			<h3 class="prod__card_title"></h3>
 			<p class="prod__card_prise"></p>
 			<img class="prod__card_img" src="">
 			<p class="prod__card_description"></p>
 			<p class="prod__card_description_full"></p>
 			<a class="prod__card_addchart" href="#">ADD TO CART</a>
+			<a class="del__button_card" href="#">Delete</a>
 		</div>
 	</template>
 
@@ -210,17 +222,36 @@
 		</form>
 	</div>
 
-
+<!-- ========== Форма для добавления слайда (Add Slide Form) =========== -->
 	
 	<div class="adding__slide_form">
-		<label for="form_prise">Enter picture's name</label>
-		<input type="text" id="slide_picture_name">
-		<button id="adding__slide_submit">Add slide</button>
+			<label for="slide_img">Select picture</label>
+			<input type="file" id="slide_img">
+			<button id="adding__slide_submit">Add slide</button>
 	</div>
 
+<!-- ========== Корзина () =========== -->
 
+	<div class="cart_wrapper">
+		<img src="img/icons8-Shopping Cart-50.png" alt="">
+		<span class="cart_counter">0</span>
+	</div>
+
+	<div class="cart_modal">
+		<a class="close__button_card" href="#">X</a>
+		<p class="cart_modal_title">Your Cart</p>
+		<p class="cart_title_empty">Your cart is empty</p>
+		<ol>
+		</ol>
+		<p class="cart_modal_prise">Total prise - <span id="totalPrise">0</span> UAH</p>
+	</div>
+
+	
+		<button id="remove_From_Chart">Remove</button>
+	
+	
 
 	<script src="js/main.js" type="text/javascript"></script>
-
+</div>
 </body>
 </html>
