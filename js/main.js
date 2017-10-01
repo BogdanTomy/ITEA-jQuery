@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+
 	var prodCard = $('#content_body');
 	var tempCard = $('#temp_card');
 
@@ -6,7 +7,9 @@ $( document ).ready(function() {
 	/*-----------------База товаров--------------------- */
 
 	var productsSource = [
-	{ /*-----------------ACANA--------------------- */
+	{
+
+	/*-----------------ACANA--------------------- */
 		id: 0,
 		manufacturer: "acana" ,
 		category: "puppies" ,
@@ -210,7 +213,7 @@ $( document ).ready(function() {
 		weight: "2 KG",
 		img: "img/prod/NS-ORI_Original_Dog_Front_Left.png" ,
 		description: "Высокобелковый сбалансированный корм для взрослых собак" ,
-		descriptionFull: "БИОЛОГИЧЕСКИ СООТВЕТСТВУЮЩИЙ КОРМ ДЛЯ СОБАК ВСЕХ ПОРОД И ВСЕХ СТАДИЙ ЖИЗНИ.",
+		descriptionFull: "Биологически соответствующий корм для собак всех пород и всех стадий жизни.",
 		value: "Orijen Original"
 	},
 
@@ -225,7 +228,7 @@ $( document ).ready(function() {
 		weight: "2,27 KG",
 		img: "img/prod/Grainchienfree.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ СОБАК ВСЕХ ПОРОД И ВОЗРАСТОВ С КУРИЦЕЙ" ,
-		descriptionFull: "Беззерновая формула корма FREE Oven-Baked НЕ СОДЕРЖИТ зерновых продуктов и состоит из 57% животного протеина.",
+		descriptionFull: "Беззерновая формула корма Grain-free Oven-Baked не содержит зерновых продуктов и состоит из 57% животного протеина.",
 		value: "Oven Baked Chiken"
 	},
 	{
@@ -237,7 +240,7 @@ $( document ).ready(function() {
 		weight: "2,27 KG",
 		img: "img/prod/Grainfreefish.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ СОБАК ВСЕХ ПОРОД И ВОЗРАСТОВ С РЫБОЙ" ,
-		descriptionFull: "Беззерновая формула корма FREE Oven-Baked НЕ СОДЕРЖИТ зерновых продуктов и состоит из 57% животного протеина.",
+		descriptionFull: "Беззерновая формула корма Grain-free Oven-Baked не содержит зерновых продуктов и состоит из 57% животного протеина.",
 		value: "Oven Baked Fish"
 	},
 	{
@@ -249,7 +252,7 @@ $( document ).ready(function() {
 		weight: "2,27 KG",
 		img: "img/prod/Grainsmallchikt.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ СОБАК МАЛЫХ ПОРОД ВСЕХ ВОЗРАСТОВ С КУРИЦЕЙ" ,
-		descriptionFull: "Беззерновая формула корма FREE Oven-Baked НЕ СОДЕРЖИТ зерновых продуктов и состоит из 57% животного протеина.",
+		descriptionFull: "Беззерновая формула корма Grain-free Oven-Baked не содержит зерновых продуктов и состоит из 57% животного протеина.",
 		value: "Oven Baked Small Breed"
 	},
 	{
@@ -261,7 +264,7 @@ $( document ).ready(function() {
 		weight: "2,27 KG",
 		img: "img/prod/Grainfreechiek.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ СОБАК МАЛЫХ ПОРОД ВСЕХ ВОЗРАСТОВ С РЫБОЙ" ,
-		descriptionFull: "Беззерновая формула корма FREE Oven-Baked НЕ СОДЕРЖИТ зерновых продуктов и состоит из 57% животного протеина.",
+		descriptionFull: "Беззерновая формула корма Grain-free Oven-Baked не содержит зерновых продуктов и состоит из 57% животного протеина.",
 		value: "Oven Baked Small Breed"
 	},
 	{
@@ -524,7 +527,7 @@ $( document ).ready(function() {
 		setTimeout(function () {
 			card.remove();
 		}, 1000);
-
+		getDragable();
 		return false;
 	});
 
@@ -575,12 +578,7 @@ $( document ).ready(function() {
 
 		document.body.style.overflow = '';
 
-		$('.content_body div').draggable({
-			helper: 'clone',
-			revert: 'invalid',
-			opacity: 0.8,
-			containment: $('body'),
-		});
+		getDragable();
 
 	});
 		$('.close_add_card_pop').on('click', function(e) {
@@ -596,230 +594,219 @@ $( document ).ready(function() {
 
 	/*----------------- Слайдер (Slider)--------------------- */
 
-var slideNow = 1;
-var slideCount = $('#slidewrapper').children().length;
-var slideInterval = 5000;
-var navBtnId = 0;
-var translateWidth = 0;
+	var slideNow = 1;
+	var slideCount = $('#slidewrapper').children().length;
+	var slideInterval = 5000;
+	var navBtnId = 0;
+	var translateWidth = 0;
 
-$(document).ready(function() {
-    var switchInterval = setInterval(nextSlide, slideInterval);
+	$(document).ready(function() {
+	    var switchInterval = setInterval(nextSlide, slideInterval);
 
-    $('#viewport').hover(function() {
-        clearInterval(switchInterval);
-    }, function() {
-        switchInterval = setInterval(nextSlide, slideInterval);
-    });
+	    $('#viewport').hover(function() {
+	        clearInterval(switchInterval);
+	    }, function() {
+	        switchInterval = setInterval(nextSlide, slideInterval);
+	    });
 
-    $('#next-btn').click(function() {
-        nextSlide();
-    });
+	    $('#next-btn').click(function() {
+	        nextSlide();
+	    });
 
-    $('#prev-btn').click(function() {
-        prevSlide();
-    });
+	    $('#prev-btn').click(function() {
+	        prevSlide();
+	    });
 
-    $('#nav-btns').on( 'click', '.slide-nav-btn', function() {
-        navBtnId = $(this).index();
+	    $('#nav-btns').on( 'click', '.slide-nav-btn', function() {
+	        navBtnId = $(this).index();
 
-        if (navBtnId + 1 != slideNow) {
-            translateWidth = -$('#viewport').width() * (navBtnId);
-            $('#slidewrapper').css({
-                'transform': 'translate(' + translateWidth + 'px, 0)',
-                '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
-                '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
-            });
-            slideNow = navBtnId + 1;
-            $('.slide-nav-current').removeClass('slide-nav-current');
-        	$('#nav-btns').children().eq(slideNow - 1).addClass('slide-nav-current');
-        };
-    });
-});
+	        if (navBtnId + 1 != slideNow) {
+	            translateWidth = -$('#viewport').width() * (navBtnId);
+	            $('#slidewrapper').css({
+	                'transform': 'translate(' + translateWidth + 'px, 0)',
+	                '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+	                '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+	            });
+	            slideNow = navBtnId + 1;
+	            $('.slide-nav-current').removeClass('slide-nav-current');
+	        	$('#nav-btns').children().eq(slideNow - 1).addClass('slide-nav-current');
+	        };
+	    });
+	});
 
 
-function nextSlide() {
-    if (slideNow == slideCount || slideNow <= 0 || slideNow > slideCount) {
-        $('#slidewrapper').css('transform', 'translate(0, 0)');
-        slideNow = 1;
-        $('.slide-nav-current').removeClass('slide-nav-current');
-        $('#nav-btns').children().eq(slideNow - 1).addClass('slide-nav-current');
-    } else {
-        translateWidth = -$('#viewport').width() * (slideNow);
-        $('.slide-nav-current').removeClass('slide-nav-current');
-        $('#nav-btns').children().eq(slideNow).addClass('slide-nav-current');
-        $('#slidewrapper').css({
-            'transform': 'translate(' + translateWidth + 'px, 0)',
-            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
-            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
-        });
-        slideNow++;
-    };
-};
+	function nextSlide() {
+	    if (slideNow == slideCount || slideNow <= 0 || slideNow > slideCount) {
+	        $('#slidewrapper').css('transform', 'translate(0, 0)');
+	        slideNow = 1;
+	        $('.slide-nav-current').removeClass('slide-nav-current');
+	        $('#nav-btns').children().eq(slideNow - 1).addClass('slide-nav-current');
+	    } else {
+	        translateWidth = -$('#viewport').width() * (slideNow);
+	        $('.slide-nav-current').removeClass('slide-nav-current');
+	        $('#nav-btns').children().eq(slideNow).addClass('slide-nav-current');
+	        $('#slidewrapper').css({
+	            'transform': 'translate(' + translateWidth + 'px, 0)',
+	            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+	            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+	        });
+	        slideNow++;
+	    };
+	};
 
-function prevSlide() {
-    if (slideNow == 1 || slideNow <= 0 || slideNow > slideCount) {
-        translateWidth = -$('#viewport').width() * (slideCount - 1);
-        $('#slidewrapper').css({
-            'transform': 'translate(' + translateWidth + 'px, 0)',
-            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
-            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
-        });
-        slideNow = slideCount;
-        $('.slide-nav-current').removeClass('slide-nav-current');
-        $('#nav-btns').children().eq(slideNow - 1).addClass('slide-nav-current');
+	function prevSlide() {
+	    if (slideNow == 1 || slideNow <= 0 || slideNow > slideCount) {
+	        translateWidth = -$('#viewport').width() * (slideCount - 1);
+	        $('#slidewrapper').css({
+	            'transform': 'translate(' + translateWidth + 'px, 0)',
+	            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+	            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+	        });
+	        slideNow = slideCount;
+	        $('.slide-nav-current').removeClass('slide-nav-current');
+	        $('#nav-btns').children().eq(slideNow - 1).addClass('slide-nav-current');
 
-    } else {
-        translateWidth = -$('#viewport').width() * (slideNow - 2);
-        $('#slidewrapper').css({
-            'transform': 'translate(' + translateWidth + 'px, 0)',
-            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
-            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
-        });
-        slideNow--;
-        $('.slide-nav-current').removeClass('slide-nav-current');
-        $('#nav-btns').children().eq(slideNow - 1).addClass('slide-nav-current');
-    };
-};
+	    } else {
+	        translateWidth = -$('#viewport').width() * (slideNow - 2);
+	        $('#slidewrapper').css({
+	            'transform': 'translate(' + translateWidth + 'px, 0)',
+	            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+	            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+	        });
+	        slideNow--;
+	        $('.slide-nav-current').removeClass('slide-nav-current');
+	        $('#nav-btns').children().eq(slideNow - 1).addClass('slide-nav-current');
+	    };
+	};
 
 /*----------------- Добавление слайда (Add slide)--------------------- */
 
-$('#add_slide_btn').on('click', function () {
+	$('#add_slide_btn').on('click', function () {
 
-	document.body.style.overflow = 'hidden';
-	$('.popup_bg').fadeTo(500, 1);
-	$('.adding__slide_form').fadeIn(500);
+		document.body.style.overflow = 'hidden';
+		$('.popup_bg').fadeTo(500, 1);
+		$('.adding__slide_form').fadeIn(500);
 	});
 
-	$('#adding__slide_submit').on('click', function (e) {
-		event.stopPropagation();
-		var file = $('.adding__slide_form').find('[type="file"]')[0].files[0];
-		$('#slidewrapper').append('<li class="slide"><img src="" class="slide-img"></li>');
+		$('#adding__slide_submit').on('click', function (e) {
+			event.stopPropagation();
+			var file = $('.adding__slide_form').find('[type="file"]')[0].files[0];
+			$('#slidewrapper').append('<li class="slide"><img src="" class="slide-img"></li>');
 
-		var reader = new FileReader();
-		reader.onload = function (e) {      
-			$('#slidewrapper > li:last-child > img').attr("src", e.target.result);
-		};
-		
-	    if(file) 
-	    reader.readAsDataURL(file);
+			var reader = new FileReader();
+			reader.onload = function (e) {      
+				$('#slidewrapper > li:last-child > img').attr("src", e.target.result);
+			};
 
-		$('#nav-btns').append('<li class="slide-nav-btn"></li>');
+		    if(file) {
+		    	reader.readAsDataURL(file);
+			};
+			$('#nav-btns').append('<li class="slide-nav-btn"></li>');
 
-		slideCount ++;
+			slideCount ++;
 
-		$('#slidewrapper').css('width', '' + 100 * slideCount + '%');
-		
+			$('#slidewrapper').css('width', '' + 100 * slideCount + '%');
+			$('#slidewrapper li').css('width', + 100 / slideCount + '%');
+			$('.popup_bg').css('display', 'none');
+			$('.adding__slide_form').css('display', 'none');
 
-		$('#slidewrapper li').css('width', + 100 / slideCount + '%');
-
-
-
-	$('.popup_bg').css('display', 'none');
-	$('.adding__slide_form').css('display', 'none');
-
-	document.body.style.overflow = '';
-	})
-
-	$('.close_add_slide_pop').on('click', function(e) {
-			e.preventDefault();
-			$('.adding__slide_form').animate({opacity:'hide'}, 500);
-			$('.popup_bg').animate({opacity:'hide'}, 500);
 			document.body.style.overflow = '';
-	});
-	
-	$('.popup_bg').on('click', function(){
-	$('.close_add_slide_pop').trigger('click');
-	})
+		});
 
+		$('.close_add_slide_pop').on('click', function(e) {
+				e.preventDefault();
+				$('.adding__slide_form').animate({opacity:'hide'}, 500);
+				$('.popup_bg').animate({opacity:'hide'}, 500);
+				document.body.style.overflow = '';
+		});
+		
+		$('.popup_bg').on('click', function(){
+		$('.close_add_slide_pop').trigger('click');
+	});
 
 /*----------------- Корзина--------------------- */
 
-var totalPrise = 0;
-var totalCount = 0;
+	var totalPrise = 0;
+	var totalCount = 0;
 
+	function getDragable(){
+	  $('.content_body div').draggable({
+		helper: 'clone',
+		revert: 'invalid',
+		opacity: 0.8,
+		containment: $('body'),
+		drag: function(event, ui){
+			if (!$('.cart_modal').hasClass('cart_active')){
+				$('.cart_wrapper').trigger('click');
+			}}
+		})
+	};
+	getDragable();
 
-$('.content_body div').draggable({
-	helper: 'clone',
-	revert: 'invalid',
-	opacity: 0.8,
-	containment: $('body'),
-	drag: function(event, ui){
-		if (!$('.cart_modal').hasClass('cart_active')){
-			$('.cart_wrapper').trigger('click');
-		};
-	}
+	$('.cart_modal').droppable({
+		activeClass: 'cart_active_class_rdagg',
+		accept: '.prod__card',
+		drop: function (event, ui) {
+			$('.cart_title_empty').css('display', 'none');
+			var clone = ui.draggable.clone();
+			var goodId = clone.attr('data-id');
+			var goodproductsSource = productsSource[goodId];
 
-});
-$('.cart_modal').droppable({
-	activeClass: 'cart_active_class_rdagg',
-	accept: '.prod__card',
-	drop: function (event, ui) {
+			$('.cart_modal > ol').append('<li></li>')
+			$('.cart_modal > ol > li').last()
+			.append(goodproductsSource.title + '</br>' + goodproductsSource.prise + ' UAH')
+			.append($('#remove_From_Chart').clone().css('display', 'block'))
+			.attr('data-cart-id', goodId)
+			.addClass('good_in_cart')
 
-		$('.cart_title_empty').css('display', 'none');
+			totalPrise += goodproductsSource.prise;
+			totalCount++
 
-		var clone = ui.draggable.clone();
-		var goodId = clone.attr('data-id');
-		var goodproductsSource = productsSource[goodId];
-		
-		$('.cart_modal > ol').append('<li></li>')
-		$('.cart_modal > ol > li').last()
-		.append(goodproductsSource.title + '</br>' + goodproductsSource.prise + ' UAH')
-		.append($('#remove_From_Chart').clone().css('display', 'block'))
-		.attr('data-cart-id', goodId)
-		.addClass('good_in_cart')
+			$('.cart_counter').text(totalCount);
+			$('#totalPrise').text(totalPrise);
+		}
+	});
 
-		totalPrise += goodproductsSource.prise;
-		totalCount++
-
-		$('.cart_counter').text(totalCount);
-
-		$('#totalPrise').text(totalPrise);
-		
-	}
-});
 /*----------------- Удаление товара из корзины--------------------- */
 
-$('.cart_modal').on('click', '#remove_From_Chart', function(event){
-	var deletedGoodId = $(this).closest('li').attr('data-cart-id');
+	$('.cart_modal').on('click', '#remove_From_Chart', function(event){
+		var deletedGoodId = $(this).closest('li').attr('data-cart-id');
 
-	totalPrise -= productsSource[deletedGoodId].prise;
-	totalCount--;
-	$('.cart_counter').text(totalCount);
-	$('#totalPrise').text(totalPrise);
-	$(this).closest('li').remove();
+		totalPrise -= productsSource[deletedGoodId].prise;
+		totalCount--;
+		$('.cart_counter').text(totalCount);
+		$('#totalPrise').text(totalPrise);
+		$(this).closest('li').remove();
 
-	if ($("li").is(".good_in_cart")) {
-		
-	} else {
-		$('.cart_title_empty').css('display', 'block');
-	}
-	
-});
+		if (!$("li").is(".good_in_cart")) {
+			$('.cart_title_empty').css('display', 'block');
+		}
+	});
+
 /*----------------- Показать\спрятать корзину--------------------- */
-$('.cart_wrapper').on('click', function () {
-	if ($('.cart_modal').hasClass('cart_active')) {
-		$('.cart_modal').fadeTo(500, 0)
-						.removeClass('cart_active')
-						setTimeout(function(){
-						$('.cart_modal').css('display', 'none')}, 500)
-	} else {
-	$('.cart_modal').fadeTo(500, 1).addClass('cart_active');
-	};
-});
 
-$('.cart_modal > .close__button_card').on( 'click', function (e) {
-	event.preventDefault();
+	$('.cart_wrapper').on('click', function () {
+		if ($('.cart_modal').hasClass('cart_active')) {
+			$('.cart_modal').fadeTo(500, 0)
+							.removeClass('cart_active')
+							setTimeout(function(){
+							$('.cart_modal').css('display', 'none')}, 500)
+		} 
+		else {
+		$('.cart_modal').fadeTo(500, 1).addClass('cart_active');
+		};
+	});
 
-	$('.cart_modal').fadeTo(500, 0)
-					.removeClass('cart_active')
-					setTimeout(function(){
-						$('.cart_modal').css('display', 'none')}, 500)
-					
-});
+	$('.cart_modal > .close__button_card').on( 'click', function (e) {
+		event.preventDefault();
+		$('.cart_modal').fadeTo(500, 0).removeClass('cart_active');
+		setTimeout(function(){
+			$('.cart_modal').css('display', 'none')}, 500);		
+	});
 
 /*----------------- Добавление товара в корзину по кнопке --------------------- */
 
-$('#content_body').on('click', '.prod__card_addchart', function addGoodToChart (e) {
+	$('#content_body').on('click', '.prod__card_addchart', function addGoodToChart (e) {
 		event.preventDefault();
 		$('.cart_title_empty').css('display', 'none');
 		var choise = $(this.closest('div'));
@@ -837,12 +824,12 @@ $('#content_body').on('click', '.prod__card_addchart', function addGoodToChart (
 		totalCount++
 
 		$('.cart_counter').text(totalCount);
-
 		$('#totalPrise').text(totalPrise);
 	});
+
 /*----------------- Добавление товара в корзину по кнопке из попапа --------------------- */
 
-$('.pop__up_wrapper').on('click', '.prod__card_addchart', function (e) {
+	$('.pop__up_wrapper').on('click', '.prod__card_addchart', function (e) {
 		event.preventDefault();
 		$('.cart_title_empty').css('display', 'none');
 
@@ -861,12 +848,12 @@ $('.pop__up_wrapper').on('click', '.prod__card_addchart', function (e) {
 		totalCount++
 
 		$('.cart_counter').text(totalCount);
-
 		$('#totalPrise').text(totalPrise);
 	});
 
-
 /*----------------- Поиск--------------------- */
+
+	
 	$('#autocomplete_search').on('focus', function(){
 		$(this).attr('placeholder', '');
 	});
@@ -874,17 +861,15 @@ $('.pop__up_wrapper').on('click', '.prod__card_addchart', function (e) {
 		$(this).attr('placeholder', 'Search...');
 		$(this).val('')
 	});
-
 	$('#autocomplete_search').autocomplete({
 		minLength: 0,
 		source: productsSource,
-			focus: function( event, ui ) {
-			        $( "#autocomplete_search" ).val( ui.item.title );
-			        return false;
-			    },
-			select: function( event, ui ) {
-				$('[data-id='+ui.item.id+'] > img').trigger('click');
-			    }
+		focus: function( event, ui ) {
+			$( "#autocomplete_search" ).val( ui.item.title );
+			return false;
+		},
+		select: function( event, ui ) {
+			$('[data-id='+ui.item.id+'] > img').trigger('click');
+		}
 	});
 });
-		 
