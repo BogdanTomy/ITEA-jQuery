@@ -1,9 +1,10 @@
-$( document ).ready(function() {
+// $( document ).ready(function() {
 
 	var prodCard = $('#content_body');
 	var tempCard = $('#temp_card');
 
-
+	
+		
 	/*-----------------База товаров--------------------- */
 
 	var productsSource = [
@@ -356,7 +357,7 @@ $( document ).ready(function() {
 	},
 
 	];
-
+	
 /*-----------------Шаблонизатор--------------------- */
 
 	function filler (root, temp, s){
@@ -474,13 +475,65 @@ $( document ).ready(function() {
 		$('.del__button_card').slideToggle('slow');
 	});
 
+
+
 	/*-----------------POPUP карточка товара --------------------- */
+	
+
+
+
+
+	// ФУНКЦИЯ ДЛЯ ВЫЧИСЛЕНИЯ ТЕКУЩЕГО ID
+
+// Вариант 1 возвращает новый индекс (текущий)
+
+	function findMyGood (searchingElementId){
+
+			var newArrayTest = [];
+
+			var getIdTest = function(elem){
+
+			newArrayTest.push(elem.id)
+		};
+		
+		productsSource.forEach(getIdTest);
+
+		return newArrayTest.indexOf(searchingElementId);
+
+	};
+
+	// Вариант 2: то же самое только вернёт сам объект
+
+
+	// function findMyGood (searchingElementId){
+
+	// 		var newArrayTest = [];
+
+	// 		var getIdTest = function(elem){
+
+	// 		newArrayTest.push(elem.id)
+	// 	};
+		
+	// 	productsSource.forEach(getIdTest);
+
+	// 	var result = newArrayTest.indexOf(searchingElementId);
+
+	// 	return productsSource[result]
+	// };
+
+
+	// САМ ОБРАБОТЧИК
 
 	$('#content_body').on( 'click', ".prod__card_img", function () {
-
 		var choise = $(this).parent('div');
-		var goodId = choise.attr('data-id');
-		var goodSrc = productsSource[goodId];
+		var oldGoodId = choise.attr('data-id');
+
+		
+		var newGoodId = findMyGood(oldGoodId);
+		// применение функции вариант 1
+
+
+
 		var popUp = $('.pop__up_wrapper');
 
 		document.body.style.overflow = 'hidden';
@@ -493,14 +546,14 @@ $( document ).ready(function() {
 				var thisImg = choise.find('img').attr('src');
 				popUp.find('.pop__up_img').attr('src', thisImg);
 		} else {
-				popUp.find('.pop__up_img').attr('src', goodSrc.img);
+				popUp.find('.pop__up_img').attr('src', productsSource[newGoodId].img);
 		};
 
-		popUp.find('.pop_up_title').text(goodSrc.title);
-		popUp.find('.pop__up_description').text(goodSrc.descriptionFull);
-		popUp.find('.pop__up_value').text(goodSrc.weight);
-		popUp.find('.pop__up_price').text(goodSrc.prise + " UAH");
-		popUp.attr('data-id', goodId);
+		popUp.find('.pop_up_title').text(productsSource[newGoodId].title);
+		popUp.find('.pop__up_description').text(productsSource[newGoodId].descriptionFull);
+		popUp.find('.pop__up_value').text(productsSource[newGoodId].weight);
+		popUp.find('.pop__up_price').text(productsSource[newGoodId].prise + " UAH");
+		popUp.attr('data-id', productsSource[newGoodId].id);
 		$('body').append(popUp);
 
 		popUp.css('display', 'flex');
@@ -512,7 +565,12 @@ $( document ).ready(function() {
 			$('.pop__up_wrapper').css('display', 'none');
 		});
 	});
-	
+
+
+	// КОНЕЦ
+
+
+
 	/*----------------- Удаление карточки (Dell card)--------------------- */
 
 	$('#content_body').on( 'click', '.del__button_card', function (e) {
@@ -521,7 +579,7 @@ $( document ).ready(function() {
 		var card = $(this).parent();
 		var cardId = card.attr('data-id');
 
-		delete productsSource[cardId];
+		productsSource.splice(cardId, 1)
 
 		card.hide('slow');
 		setTimeout(function () {
@@ -872,4 +930,13 @@ $( document ).ready(function() {
 			$('[data-id='+ui.item.id+'] > img').trigger('click');
 		}
 	});
-});
+// });
+
+
+
+	
+
+
+
+
+	
