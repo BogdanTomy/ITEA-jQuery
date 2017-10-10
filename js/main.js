@@ -16,7 +16,7 @@ $( document ).ready(function() {
 		title: "Acana puppy small breed" ,
 		prise: 500 ,
 		weight: "2 KG",
-		img: "img/prod/Acana_dog_puppy_small_breed.png" ,
+		img: "img/prod/Acana_dog_puppy_small_breed.jpg" ,
 		description: "Беззерновой корм для щенков собак малых пород" ,
 		descriptionFull: "Полноценный и сбалансированный беззерновой холистик корм для щенков малых пород",
 		value: "Acana Puppy Small Breed"
@@ -28,7 +28,7 @@ $( document ).ready(function() {
 		title: "Acana Sport & Agility" ,
 		prise: 1850 ,
 		weight: "11,4 KG",
-		img: "img/prod/sport_and_agility-250x368.png" ,
+		img: "img/prod/sport_and_agility-250x368.jpg" ,
 		description: "Беззерновой корм для активных собак всех пород" ,
 		descriptionFull: "Полноценный и сбалансированный холистик корм для собак с активным образом жизни.",
 		value: "Acana Sport & Agility"
@@ -40,7 +40,7 @@ $( document ).ready(function() {
 		title: "Acana Lamb & Apple" ,
 		prise: 600 ,
 		weight: "2 KG",
-		img: "img/prod/aka-yagnenok-yabloko-dlya-soback-vseh-porod.png" ,
+		img: "img/prod/aka-yagnenok-yabloko-dlya-soback-vseh-porod.jpg" ,
 		description: "Беззерновой корм для собак с ягнёнком и яблоком" ,
 		descriptionFull: "Корм для собак всех возрастов и всех пород на основе мяса ягненка и яблока. Особенно подходит  для собак с чувствительным пищеварением и склонным к аллергии.",
 		value: "Acana Lamb & Apple"
@@ -52,7 +52,7 @@ $( document ).ready(function() {
 		title: "Acana Puppy & Junior" ,
 		prise: 550 ,
 		weight: "2 KG",
-		img: "img/prod/Acana_Heritage_dog_puppy_and_junior-1-250x368.png" ,
+		img: "img/prod/Acana_Heritage_dog_puppy_and_junior-1-250x368.jpg" ,
 		description: "Беззерновой корм для щенков собак средних пород" ,
 		descriptionFull: "Полноценный и сбалансированный корм для щенков и юниоров средних пород.",
 		value: "Acana Puppy & Junior"
@@ -64,7 +64,7 @@ $( document ).ready(function() {
 		title: "Acana Puppy Large Breed" ,
 		prise: 1980 ,
 		weight: "11,4 KG",
-		img: "img/prod/puppy_large_breed-250x368.png" ,
+		img: "img/prod/puppy_large_breed-250x368.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ ЩЕНКОВ СОБАК КРУПНЫХ ПОРОД" ,
 		descriptionFull: "Полноценный и сбалансированный корм для щенков крупных пород.",
 		value: "Acana Puppy Large Breed"
@@ -76,7 +76,7 @@ $( document ).ready(function() {
 		title: "Acana Yorkshire Pork" ,
 		prise: 600 ,
 		weight: "2 KG",
-		img: "img/prod/ACANA_Yorkshire_Pork.png" ,
+		img: "img/prod/ACANA_Yorkshire_Pork.jpg" ,
 		description: "Беззерновой корм для собак с мясом йоркширского поросенка" ,
 		descriptionFull: "Полнорационный и сбалансированный корм для собак всех пород и возрастов с чувствительной пищеварительной системой." ,
 		value: "Acana Yorkshire Pork"
@@ -88,7 +88,7 @@ $( document ).ready(function() {
 		title: "Acana Adult Large Breed" ,
 		prise: 1850 ,
 		weight: "11,4 KG",
-		img: "img/prod/Acana_Heritage_dog_adult_large_breed.png" ,
+		img: "img/prod/Acana_Heritage_dog_adult_large_breed.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ ВЗРОСЛЫХ СОБАК КРУПНЫХ ПОРОД" ,
 		descriptionFull: "Полноценный и сбалансированный корм для взрослых собак крупных пород.",
 		value: "Acana Adult Large Breed"
@@ -100,7 +100,7 @@ $( document ).ready(function() {
 		title: "Acana Adult Dog" ,
 		prise: 1640 ,
 		weight: "13 KG",
-		img: "img/prod/acana-adult-dog.png" ,
+		img: "img/prod/acana-adult-dog.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ ВЗРОСЛЫХ СОБАК средних ПОРОД" ,
 		descriptionFull: "Полноценный,  сбалансированый корм для взрослых собак всех пород. Натуральный и вкусный, он обеспечит Вашей собаке силу и здоровье.",
 		value: "Acana Adult Dog"
@@ -112,7 +112,7 @@ $( document ).ready(function() {
 		title: "Acana Adult Small Breed" ,
 		prise: 550 ,
 		weight: "2 KG",
-		img: "img/prod/Acana_Heritage_dog_adult_small_breed.png" ,
+		img: "img/prod/Acana_Heritage_dog_adult_small_breed.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ ВЗРОСЛЫХ СОБАК МАЛЫХ ПОРОД" ,
 		descriptionFull: "Полноценный и сбалансированный корм, богатый качественными протеинами и жирами, с низким содержанием углеводов, для контроля над весом.",
 		value: "Acana Adult Small Breed"
@@ -124,7 +124,7 @@ $( document ).ready(function() {
 		title: "Acana Cobb Chicken & Greens" ,
 		prise: 1170 ,
 		weight: "6 KG",
-		img: "img/prod/chicken_greens.png" ,
+		img: "img/prod/chicken_greens.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ С КУРИЦЕЙ ДЛЯ СОБАК ВСЕХ ПОРОД" ,
 		descriptionFull: "Полноценный и сбалансированный корм для взрослых собак на основе мяса цыпленка.",
 		value: "Acana Cobb Chicken & Greens"
@@ -136,7 +136,7 @@ $( document ).ready(function() {
 		title: "Acana Light & Fit" ,
 		prise: 1850 ,
 		weight: "11,4 KG",
-		img: "img/prod/light_and_fit.png" ,
+		img: "img/prod/light_and_fit.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ СОБАК С ИЗБЫТОЧНЫМ ВЕСОМ" ,
 		descriptionFull: "Полноценный и сбалансированный корм для взрослых собак всех пород с избыточным весом.",
 		value: "Acana Light & Fit"
@@ -148,7 +148,7 @@ $( document ).ready(function() {
 		title: "Acana Free-run Duck" ,
 		prise: 650 ,
 		weight: "2 KG",
-		img: "img/prod/duck.png" ,
+		img: "img/prod/duck.jpg" ,
 		description: "БЕЗЗЕРНОВОЙ КОРМ ДЛЯ СОБАК ВСЕХ ПОРОД НА ВСЕХ СТАДИЯХ ЖИЗНИ" ,
 		descriptionFull: "Полноценный и сбалансированный корм для взрослых собак всех пород. Биологически Соответствующая формула идеальна даже для самых привередливых питомцев.",
 		value: "Acana Free-run Duck"
@@ -175,7 +175,7 @@ $( document ).ready(function() {
 		title: "Orijen Puppy Large" ,
 		prise: 2500 ,
 		weight: "11,4 KG",
-		img: "img/prod/NS-ORI_Puppy_Large__Dog_Front_Left.png" ,
+		img: "img/prod/NS-ORI_Puppy_Large__Dog_Front_Left.jpg" ,
 		description: "Высокобелковый беззерновой корм для щенков крупных пород" ,
 		descriptionFull: "Полноценный, сбалансированый беззерновой холистик корм для щенков собак всех пород.",
 		value: "Orijen Puppy Large"
@@ -211,7 +211,7 @@ $( document ).ready(function() {
 		title: "Orijen Original" ,
 		prise: 825 ,
 		weight: "2 KG",
-		img: "img/prod/NS-ORI_Original_Dog_Front_Left.png" ,
+		img: "img/prod/NS-ORI_Original_Dog_Front_Left.jpg" ,
 		description: "Высокобелковый сбалансированный корм для взрослых собак" ,
 		descriptionFull: "Биологически соответствующий корм для собак всех пород и всех стадий жизни.",
 		value: "Orijen Original"
