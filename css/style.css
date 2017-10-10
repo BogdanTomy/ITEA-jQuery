@@ -338,6 +338,7 @@ footer {
 }
 .pop__up_imgwrap img {
 	height: 400px;
+	width: auto;
 }
 .pop__up_content{
 	flex-grow: 3; 
@@ -739,7 +740,6 @@ footer {
 	}
 	.pop__up_imgwrap img {
 		height: 350px;
-		width: auto;
 	}
 	.pop_up_title {
 		margin-top: 26px;
@@ -775,6 +775,7 @@ footer {
 	}
 	.pop__up_imgwrap img {
 		height: 285px;
+
 	}
 	.pop_up_title {
 		font-size: 24px;
