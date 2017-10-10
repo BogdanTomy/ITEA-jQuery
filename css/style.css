@@ -739,6 +739,7 @@ footer {
 	}
 	.pop__up_imgwrap img {
 		height: 350px;
+		width: auto;
 	}
 	.pop_up_title {
 		margin-top: 26px;
