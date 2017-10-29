@@ -107,6 +107,7 @@ header {
 	position: absolute;
 	top: 0;
 	right: 0;
+	cursor: pointer;
 }
 
 		/*Сервисное меню*/
@@ -335,6 +336,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	min-width: 260px;
 }
 .pop__up_imgwrap img {
 	height: 400px;
